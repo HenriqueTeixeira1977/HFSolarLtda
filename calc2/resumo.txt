@@ -1,0 +1,14 @@
+Detalhes dos Cálculos
+1. Potência Instalada: Estimada com base no consumo mensal e nas horas de sol por dia.
+2. Quantidade de Painéis: Baseado em painéis de 330W.
+3. Área Mínima Ocupada: Cada painel ocupa aproximadamente 1.94 m².
+4. Valor do Investimento: Considera um custo aproximado de R$1000 por painel.
+5. Economia Anual: Baseada no valor mensal da conta de luz multiplicado por 12.
+6. Retorno do Investimento: Calculado dividindo o valor do investimento pela economia anual.
+Essa implementação oferece uma base sólida para uma calculadora solar funcional, permitindo que você a expanda conforme necessário para incluir mais dados e cálculos precisos.
+
+Explicação das alterações:
+Validação de Entrada: O código agora valida se os valores de entrada para valorConta e consumoMensal são números válidos antes de prosseguir com os cálculos.
+Exibição de Resultados: As linhas de código que atualizam os resultados no DOM foram corrigidas para garantir que os valores corretos sejam exibidos.
+Exibição Condicional: O div de resultados é exibido somente após o cálculo bem-sucedido.
+Este ajuste deve garantir que os cálculos sejam realizados corretamente e que os resultados sejam exibidos na tela.

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Solar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Calculadora Solar Aldo</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main">
+            <h2>Saiba quanto custa gerar a sua própria energia solar!</h2>
+            <form id="solarForm">
+                <div class="form-group">
+                    <label for="cep">CEP da Instalação</label>
+                    <input type="text" id="cep" name="cep" required>
+                    <button type="button" onclick="pesquisarCEP()">Pesquisar CEP</button>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="uf">UF</label>
+                    <select id="uf" name="uf">
+                        <!-- Lista completa de estados brasileiros -->
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="concessionaria">Concessionária de Energia</label>
+                    <input type="text" id="concessionaria" name="concessionaria" required>
+                </div>
+                <div class="form-group">
+                    <label for="valorConta">Qual o valor mensal da conta de luz?</label>
+                    <input type="number" id="valorConta" name="valorConta" required>
+                </div>
+                <div class="form-group">
+                    <label for="consumoMensal">Consumo Mensal kW/h</label>
+                    <input type="number" id="consumoMensal" name="consumoMensal" required>
+                </div>
+                <button type="button" class="btn" onclick="calculate()">Calcular</button>
+            </form>
+            <div class="results" id="results" style="display:none;">
+                <h3>O Gerador Ideal para Você:</h3>
+                <p>Potência Instalada: <span id="potencia"></span> kWp</p>
+                <p>Qtde de Painéis: <span id="paineis"></span></p>
+                <p>Área Mínima Ocupada: <span id="area"></span> m²</p>
+                <p>Produção Mensal: <span id="producaoMensal"></span> kWh</p>
+                <p>Produção Anual: <span id="producaoAnual"></span> kWh</p>
+                <p>Valor do Investimento: R$ <span id="investimento"></span></p>
+                <p>Economia Anual: R$ <span id="economiaAnual"></span></p>
+                <p>Retorno do Investimento: <span id="retorno"></span> anos</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

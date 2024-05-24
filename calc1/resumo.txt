@@ -1,0 +1,15 @@
+Summary
+This example provides a basic structure for your website. The calculator.html page includes a simple form that calculates the number of solar panels needed based on user input. You can further enhance this with additional features like:
+
+Mobile responsiveness.
+More advanced calculations considering efficiency, loss factors, and cost.
+A backend to store user inquiries and provide more detailed quotes.
+For a real-world application, consider using a framework like React or Angular for the frontend and a backend system like Node.js or Django to handle calculations and store data.
+*************
+Resumo
+Este exemplo fornece uma estrutura básica para o seu site. A página calculator.html inclui um formulário simples que calcula o número de painéis solares necessários com base na entrada do usuário. Você pode aprimorar ainda mais isso com recursos adicionais como:
+
+Capacidade de resposta móvel.
+Cálculos mais avançados considerando eficiência, fatores de perda e custo.
+Um backend para armazenar consultas de usuários e fornecer orçamentos mais detalhados.
+Para uma aplicação do mundo real, considere usar uma estrutura como React ou Angular para o frontend e um sistema backend como Node.js ou Django para lidar com cálculos e armazenar dados.
