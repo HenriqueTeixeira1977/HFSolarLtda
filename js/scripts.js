@@ -38,14 +38,18 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
     const eficienciaPainel = 0.18; // Eficiência média dos painéis solares (18%)
     const areaPainel = 2.8; // Área média de um painel solar em m²
     const potenciaPainel = 0.25; // Potência média de um painel solar em kW (570 W)
-
+    const potenciaModulo = 570;  //
+    
+    //  Area de Cálculos;
     const potenciaSistema = consumoMensal / (diasNoMes * horasSolDia);
     const qtdePaineis = Math.ceil(potenciaSistema / potenciaPainel);
     const areaMinimaOcupada = qtdePaineis * areaPainel;
 
     const producaoMensal = potenciaSistema * horasSolDia * diasNoMes;
     const producaoAnual = producaoMensal * 12;
-    const custoSistema = potenciaSistema * 7500; // Suposição de custo por kW instalado (ajuste conforme necessário)
+    const custoSistema = potenciaSistema * 7290; // Suposição de custo por kW instalado (ajuste conforme necessário)
+    
+    const totalPotencia = potenciaModulo * qtdePaineis; 
     const economiaAnual = consumoMensal * custoKwh * 12;
     const payback = custoSistema / economiaAnual;
 
@@ -54,8 +58,11 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
         <p>Investimento:<br> <span>R$${custoSistema.toFixed(2)}</span></p><br>
         <p>Qtde de Painéis:<br> <span>${qtdePaineis}</span></p><br>
         <p>Área Mín:<br> <span>${areaMinimaOcupada.toFixed(2)} m²</span></p><br>
-        <p>Potência Instalada:<br><span>${potenciaSistema.toFixed(2)} kW</span></p><br>
+        
+        <p>Potencia Total:<br> <span>${totalPotencia.toFixed(2)} WP</span></p><br>       
+        <p>Potência Média:<br><span>${potenciaSistema.toFixed(2)} kW</span></p><br>
         <p>Produção Mês:<br> <span>${producaoMensal.toFixed(2)} kWh</span></p><br>
+        
         <p>Produção Ano:<br> <span>${producaoAnual.toFixed(2)} kWh</span></p><br>
         <p>Economia Ano:<br> <span>R$ ${economiaAnual.toFixed(2)}</span></p><br>
         <p>PayBack:<br> <span>${payback.toFixed(2)} anos</span></p><br>
