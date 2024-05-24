@@ -33,11 +33,11 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
     }
 
     // Suposição de 8 horas de sol por dia e 30 dias no mês
-    const horasSolDia = 8;
+    const horasSolDia = 9;
     const diasNoMes = 30;
     const eficienciaPainel = 0.18; // Eficiência média dos painéis solares (18%)
-    const areaPainel = 1.6; // Área média de um painel solar em m²
-    const potenciaPainel = 0.57; // Potência média de um painel solar em kW (570 W)
+    const areaPainel = 2.8; // Área média de um painel solar em m²
+    const potenciaPainel = 0.25; // Potência média de um painel solar em kW (570 W)
 
     const potenciaSistema = consumoMensal / (diasNoMes * horasSolDia);
     const qtdePaineis = Math.ceil(potenciaSistema / potenciaPainel);
@@ -45,16 +45,16 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
 
     const producaoMensal = potenciaSistema * horasSolDia * diasNoMes;
     const producaoAnual = producaoMensal * 12;
-    const custoSistema = potenciaSistema * 5000; // Suposição de custo por kW instalado (ajuste conforme necessário)
+    const custoSistema = potenciaSistema * 7500; // Suposição de custo por kW instalado (ajuste conforme necessário)
     const economiaAnual = consumoMensal * custoKwh * 12;
     const payback = custoSistema / economiaAnual;
 
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
         <p>Investimento:<br> <span>R$${custoSistema.toFixed(2)}</span></p><br>
-        <p>Potência Instalada:<br><span>${potenciaSistema.toFixed(2)} kW</span></p><br>
         <p>Qtde de Painéis:<br> <span>${qtdePaineis}</span></p><br>
         <p>Área Mín:<br> <span>${areaMinimaOcupada.toFixed(2)} m²</span></p><br>
+        <p>Potência Instalada:<br><span>${potenciaSistema.toFixed(2)} kW</span></p><br>
         <p>Produção Mês:<br> <span>${producaoMensal.toFixed(2)} kWh</span></p><br>
         <p>Produção Ano:<br> <span>${producaoAnual.toFixed(2)} kWh</span></p><br>
         <p>Economia Ano:<br> <span>R$ ${economiaAnual.toFixed(2)}</span></p><br>
