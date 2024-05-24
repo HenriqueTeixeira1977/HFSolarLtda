@@ -63,7 +63,8 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
 
 });
 
- Google tag (gtag.js)
+
+//  <!-- Google tag (gtag.js) -->
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
