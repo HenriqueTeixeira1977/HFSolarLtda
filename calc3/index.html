@@ -37,13 +37,7 @@
             <section class="form-section">
                 <h2>Formulário Calculadora</h2>
 
-
-
-                <form class="solar-form" id="solar-form" action="https://formsubmit.co/contato@henriqueteixeiraoficial.com.br" method="POST">
-                    <input type="hidden" name="_next" value="https://hfsolar.netlify.app/obrigado.html">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">       
-                    
+                <form class="solar-form" id="solar-form" action="" method="POST" name="formulario-contato">      
                     
                     <div class="form-group">
                         <label for="nome">Nome:</label>
@@ -160,7 +154,6 @@
                 <input type="text" id="cep" name="cep" required>
                 <input type="text" id="endereco" name="endereco" required readonly>
                 <input type="text" id="cidade" name="cidade" required readonly>
-
                 <select id="uf" name="uf" required readonly>
                     <option value="">Selecione o Estado</option>
                     <option value="AC">Acre</option>
@@ -204,7 +197,6 @@
                     <option value="Coelba">Coelba</option>
                     <!-- Adicione outras concessionárias conforme necessário -->
                 </select>
-                
                 <input type="number" step="0.01" id="valor-conta" name="valor-conta" required>
                 <input type="number" id="consumo-mensal" name="consumo-mensal" required>
                 <button type="submit">Simular</button>

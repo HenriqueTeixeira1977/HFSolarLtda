@@ -79,3 +79,21 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
 
   gtag('config', 'G-2HJZTFTFZ7');
 
+//  Script de envio de dados do Formulario para Google Sheets
+
+const script_do_google = 'https://script.google.com/macros/s/AKfycbzh5phaitF3BEYVF2F6wEAUoeMArc4htJT5b4jesWsHbyBmeDnVAiSC3TdlQs9GGEQ8Xw/exec';
+const dados_do_formulario = document.forms['formulario-contato'];
+
+dados_do_formulario.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+fetch(script_do_google, { method: 'POST', body: new FormData(dados_do_formulario) })
+.then(response => {
+    //se os Dados forem gravados corretamente, será enviadad uma mensagem de sucesso
+    alert('Dados enviados com Sucesso!', response);
+    dados_do_formulario.reset();
+})
+.catch(error =>
+    //  Se houver erro no envio, amensagem abaixo será exibida
+    console.error('Erro no envio dos Dados!', error));
+});
