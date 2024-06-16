@@ -20,6 +20,8 @@ document.getElementById('cep').addEventListener('blur', function() {
         .catch(error => console.error('Erro ao buscar o CEP:', error));
 });
 
+//  Script da Calculadora
+
 document.getElementById('solar-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
