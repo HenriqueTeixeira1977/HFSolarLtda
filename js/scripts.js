@@ -50,8 +50,8 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
     const custoSistema = potenciaSistema * 7290; // Suposição de custo por kW instalado (ajuste conforme necessário)
     
     const totalPotencia = potenciaModulo * qtdePaineis; 
-    const economiaAnual = consumoMensal * custoKwh * 12;
-    const payback = custoSistema / economiaAnual;
+    const economiaAnual = consumoMensal * custoKwh * 0.12;
+    const payback = custoSistema / economiaAnual * 10;
 
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
@@ -65,7 +65,7 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
         
         <p>Produção Ano:<br> <span>${producaoAnual.toFixed(2)} kWh</span></p><br>
         <p>Economia Ano:<br> <span>R$ ${economiaAnual.toFixed(2)}</span></p><br>
-        <p>PayBack:<br> <span>${payback.toFixed(2)} anos</span></p><br>
+        <p>PayBack:<br> <span>${payback.toFixed(2)} Meses</span></p><br>
     `;
 
 });
