@@ -33,7 +33,7 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
     }
 
     // Suposição de 8 horas de sol por dia e 30 dias no mês
-    const horasSolDia = 9;
+    const horasSolDia = 8;
     const diasNoMes = 30;
     const eficienciaPainel = 0.18; // Eficiência média dos painéis solares (18%)
     const areaPainel = 2.8; // Área média de um painel solar em m²
@@ -47,11 +47,11 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
 
     const producaoMensal = potenciaSistema * horasSolDia * diasNoMes;
     const producaoAnual = producaoMensal * 12;
-    const custoSistema = potenciaSistema * 7290; // Suposição de custo por kW instalado (ajuste conforme necessário)
+    const custoSistema = potenciaSistema * 3800; // Suposição de custo por kW instalado (ajuste conforme necessário)
     
     const totalPotencia = potenciaModulo * qtdePaineis; 
-    const economiaAnual = consumoMensal * custoKwh * 0.12;
-    const payback = custoSistema / economiaAnual * 10;
+    const economiaAnual = consumoMensal * custoKwh * 12;
+    const payback = custoSistema / economiaAnual * 12;
 
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
@@ -65,7 +65,7 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
         
         <p>Produção Ano:<br> <span>${producaoAnual.toFixed(2)} kWh</span></p><br>
         <p>Economia Ano:<br> <span>R$ ${economiaAnual.toFixed(2)}</span></p><br>
-        <p>PayBack:<br> <span>${payback.toFixed(2)} Meses</span></p><br>
+        <p>PayBack:<br> <span>${payback.toFixed(0)} Meses</span></p><br>
     `;
 
 });
