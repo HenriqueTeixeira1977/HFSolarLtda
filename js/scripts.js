@@ -47,7 +47,7 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
 
     const producaoMensal = potenciaSistema * horasSolDia * diasNoMes;
     const producaoAnual = producaoMensal * 12;
-    const custoSistema = potenciaSistema * 3800; // Suposição de custo por kW instalado (ajuste conforme necessário)
+    const custoSistema = potenciaSistema * 6480; // Suposição de custo por kW instalado (ajuste conforme necessário)
     
     const totalPotencia = potenciaModulo * qtdePaineis; 
     const economiaAnual = consumoMensal * custoKwh * 12;
@@ -55,15 +55,15 @@ document.getElementById('solar-form').addEventListener('submit', function(e) {
 
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
-        <p>Investimento:<br> <span>R$${custoSistema.toFixed(2)}</span></p><br>
+        <p>Investimento:<br> <span>R$ ${custoSistema.toFixed(2)}</span></p><br>
         <p>Qtde de Painéis:<br> <span>${qtdePaineis}</span></p><br>
         <p>Área Mín:<br> <span>${areaMinimaOcupada.toFixed(2)} m²</span></p><br>
         
-        <p>Potencia Total:<br> <span>${totalPotencia.toFixed(2)} WP</span></p><br>       
-        <p>Potência Média:<br><span>${potenciaSistema.toFixed(2)} kW</span></p><br>
-        <p>Produção Mês:<br> <span>${producaoMensal.toFixed(2)} kWh</span></p><br>
+        <p>Potencia Total:<br> <span>${totalPotencia.toFixed(0)} WP</span></p><br>       
+        <p>Potência Média:<br><span>${potenciaSistema.toFixed(0)} kW</span></p><br>
+        <p>Produção Mês:<br> <span>${producaoMensal.toFixed(0)} kWh</span></p><br>
         
-        <p>Produção Ano:<br> <span>${producaoAnual.toFixed(2)} kWh</span></p><br>
+        <p>Produção Ano:<br> <span>${producaoAnual.toFixed(0)} kWh</span></p><br>
         <p>Economia Ano:<br> <span>R$ ${economiaAnual.toFixed(2)}</span></p><br>
         <p>PayBack:<br> <span>${payback.toFixed(0)} Meses</span></p><br>
     `;
