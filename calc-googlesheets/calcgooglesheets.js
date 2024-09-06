@@ -1,3 +1,30 @@
+document.getElementById('cep').addEventListener('blur', function() {
+  const cep = this.value.replace(/\D/g, '');
+  if (cep.length !== 8) {
+      alert('CEP inválido!');
+      return;
+  }
+
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then(response => response.json())
+      .then(data => {
+          if (data.erro) {
+              alert('CEP não encontrado!');
+              return;
+          }
+
+          document.getElementById('endereco').value = data.logradouro;
+          document.getElementById('cidade').value = data.localidade;
+          document.getElementById('uf').value = data.uf;
+      })
+      .catch(error => console.error('Erro ao buscar o CEP:', error));
+});
+
+
+
+
+  // FORM GOOGLE SHEETS
+
 const scriptURL =                       
 "https://script.google.com/macros/s/AKfycbyKDOlZMCMyXt4xVwjK8B8jnOsTc-hA_SHesFl8HKrnfFnetH8Xa_NmXh4P0gdFX_chWA/exec";
 

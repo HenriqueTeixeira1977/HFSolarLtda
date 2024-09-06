@@ -3,115 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HF SOLAR LTDA. - CALCULADORA PARA DIMENSIONAMENTO DE USINA FOTOVOLTÁICA</title>
     <link rel="stylesheet" href="calcgooglesheets.css">
 </head>
 <body>
-    <div class="form_ggl">
-        <div class="form-container">              
-          <h4 class="text-center mb-4">Form Submission</h4>    
-          
-          <form id="submit-to-google-sheet">   
+  <main>
+      <section class="container">    
+          <div class="form_ggl">
+              <div class="form-container">              
+                <h4 class="text-center mb-4">Form Submission</h4>                    
+                
+                
+                <form id="submit-to-google-sheet">  
+                  <div class="side-one">
+                    <h3>Informações para Cadastro</h3>  
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required/>
+                    </div>
+                    <div class="form-group">               
+                      <label for="name">Sobrenome:</label>
+                      <input class="form-control" type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required/>
+                    </div>
+                    <div class="form-group">               
+                      <label for="name">CPF/CNPJ</label>
+                      <input class="form-control" type="text" name="cpfcnpj" id="cpfcnpj" placeholder="CPF/CNPJ" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input class="form-control" type="email" name="email" id="email" placeholder="Email" required/>
+                    </div>           
+                    <div class="form-group">
+                      <label for="slip">Whatsapp:</label>
+                      <input class="form-control" type="text" name="whatsapp" id="whatsapp" placeholder="Whatsapp" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="slip">CEP:</label>
+                      <input class="form-control" type="text" name="cep" id="cep" placeholder="CEP de Instalação" required />
+                    </div>               
+                    <div class="form-group">
+                      <label for="slip">Endereço:</label>
+                      <input class="form-control" type="text" name="endereco" id="endereco" placeholder="Endereço de Instalação" required />
+                    </div>               
+                    <div class="form-group">
+                      <label for="slip">Numero:</label>
+                      <input class="form-control" type="text" name="numero" id="numero" placeholder="Numero" required />
+                    </div>                
+                    <div class="form-group">
+                      <label for="slip">Cidade:</label>
+                      <input class="form-control" type="text" name="cidade" id="cidade" placeholder="Cidade" required />
+                    </div>                
+                    <div class="form-group">
+                      <label for="slip">Estado:</label>
+                      <input class="form-control" type="text" name="estado" id="estado" placeholder="Estado" required />
+                    </div>  
+                  </div>    
+                 <div class="side-two"> 
+                  <h3>Informações para Dimencionamento</h3>    
+                    <div class="form-group">
+                      <label for="loc">Concessionária:</label>
+                      <select class="form-control" name="concessionaria" id="concessionaria" required>
+                        <option value="" disabled selected hidden>Escolha a Concessionária de Energia...</option>
+                        <option value="cpfl">CPFL</option>
+                        <option value="cmig">CMIG</option>
+                        <option value="light">LIGHT</option>
+                      </select>
+                    </div>                
+                    <div class="form-group">
+                      <label for="loc">Instalação</label>
+                      <select class="form-control" name="instalacao" id="instalacao" required>
+                        <option value="" disabled selected hidden>Escolha o tipo de Instalação...</option>
+                        <option value="residencial">Residêncial</option>
+                        <option value="comercial">Comercial</option>
+                        <option value="indistria">Industria</option>
+                        <option value="agro">Agro</option>
+                        <option value="predial">Predial</option>
+                      </select>
+                    </div>                
+                    <div class="form-group">
+                      <label for="loc">Estrutura</label>
+                      <select class="form-control" name="estrutura" id="estrutura" required>
+                        <option value="" disabled selected hidden>Escolha o tipo de Estrutura...</option>
+                        <option value="ceramico">Cerâmico</option>
+                        <option value="fibrocimento">Fibrocimento</option>
+                        <option value="laje">Laje</option>
+                        <option value="metalico">Metálico</option>
+                        <option value="misto">Misto</option>
+                        <option value="solo">Solo</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="slip">Consumo Médio em kWh:</label>
+                        <input class="form-control" type="text" name="consumo" id="consumo" placeholder="Consumo Médio" required />
+                    </div> 
+                    <div class="form-group">
+                        <label for="slip">Valor Médio em da fatura em R$:</label>
+                        <input class="form-control" type="text" name="valor" id="valor" placeholder="Valor Médio" required />
+                    </div> 
+        
+                    <div class="form-group">
+                      <label for="loc">Message:</label>
+                      <textarea class="form-control" name="message" id="message" placeholder="Message" required ></textarea>
+                    </div>                
+                    <div class="check-box">
+                      <div class="form-group form-check" id="check-terms">
+                        <div class="input-terms">
+                          <input class="form-check-input" type="checkbox" id="terms" />
+                        </div>
+                        <div class="label-txt">
+                          <p>Ao marcar esta caixa, certifico que concordo com os termos e políticas de dados.</p>
+                        </div>
+                      </div>
+                    </div>
 
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required/>
-            </div>
-            <div class="form-group">               
-              <label for="name">Sobrenome:</label>
-              <input class="form-control" type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required/>
-            </div>
-            <div class="form-group">               
-              <label for="name">CPF/CNPJ</label>
-              <input class="form-control" type="text" name="cpfcnpj" id="cpfcnpj" placeholder="CPF/CNPJ" required/>
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input class="form-control" type="email" name="email" id="email" placeholder="Email" required/>
-            </div>           
-            <div class="form-group">
-              <label for="slip">Whatsapp:</label>
-              <input class="form-control" type="text" name="whatsapp" id="whatsapp" placeholder="Whatsapp" required />
-            </div>
-            <div class="form-group">
-              <label for="slip">CEP:</label>
-              <input class="form-control" type="text" name="cep" id="cep" placeholder="CEP de Instalação" required />
-            </div>               
-            <div class="form-group">
-              <label for="slip">Endereço:</label>
-              <input class="form-control" type="text" name="endereco" id="endereco" placeholder="Endereço de Instalação" required />
-            </div>               
-            <div class="form-group">
-              <label for="slip">Numero:</label>
-              <input class="form-control" type="text" name="numero" id="numero" placeholder="Numero" required />
-            </div>                
-            <div class="form-group">
-              <label for="slip">Cidade:</label>
-              <input class="form-control" type="text" name="cidade" id="cidade" placeholder="Cidade" required />
-            </div>                
-            <div class="form-group">
-              <label for="slip">Estado:</label>
-              <input class="form-control" type="text" name="estado" id="estado" placeholder="Estado" required />
-            </div>        
-            <div class="form-group">
-              <label for="loc">Concessionária:</label>
-              <select class="form-control" name="concessionaria" id="concessionaria" required>
-                <option value="" disabled selected hidden>Escolha a Concessionária de Energia...</option>
-                <option value="cpfl">CPFL</option>
-                <option value="cmig">CMIG</option>
-                <option value="light">LIGHT</option>
-              </select>
-            </div>                
-            <div class="form-group">
-              <label for="loc">Instalação</label>
-              <select class="form-control" name="instalação" id="instalação" required>
-                <option value="" disabled selected hidden>Escolha o tipo de Instalação...</option>
-                <option value="residencial">Residêncial</option>
-                <option value="comercial">Comercial</option>
-                <option value="indistria">Industria</option>
-                <option value="agro">Agro</option>
-                <option value="predial">Predial</option>
-              </select>
-            </div>                
-            <div class="form-group">
-              <label for="loc">Estrutura</label>
-              <select class="form-control" name="estrutura" id="estrutura" required>
-                <option value="" disabled selected hidden>Escolha o tipo de Estrutura...</option>
-                <option value="ceramico">Cerâmico</option>
-                <option value="fibrocimento">Fibrocimento</option>
-                <option value="laje">Laje</option>
-                <option value="metalico">Metálico</option>
-                <option value="misto">Misto</option>
-                <option value="solo">Solo</option>
-              </select>
-            </div>
-            <div class="form-group">
-                <label for="slip">Consumo Médio em kWh:</label>
-                <input class="form-control" type="text" name="consumo" id="consumo" placeholder="Consumo Médio" required />
-            </div> 
-            <div class="form-group">
-                <label for="slip">Valor Médio em da fatura em R$:</label>
-                <input class="form-control" type="text" name="valor" id="valor" placeholder="Valor Médio" required />
-            </div> 
+                    <div class="box">
+                      <h3>Lorem ipsum dolor</h3>
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus itaque nobis expedita incidunt placeat vel sit dolores praesentium libero vitae, voluptatum neque eos repudiandae cum ab alias ipsum vero excepturi.</p>
+  
+                    </div>
 
-            <div class="form-group">
-              <label for="loc">Message:</label>
-              <textarea class="form-control" name="message" id="message" placeholder="Message" required ></textarea>
-            </div>                
-            <div class="check-box">
-              <div class="form-group form-check" id="check-terms">
-                <div class="input-terms">
-                  <input class="form-check-input" type="checkbox" id="terms" />
-                </div>
-                <div class="label-txt">
-                  <p>By checking this box I certify that I am agree with the data terms and policies.</p>
-                </div>
+
+
+
+
+                  </div>
+
+                  <div class="botao">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button> 
+                  </div>
+                </form>     
+                
               </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
-          </form>      
-        </div>
-    </div>    
+          </div> 
+      </section>  
+  </main> 
 </body>
 <script src="calcgooglesheets.js"></script>
 
